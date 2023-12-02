@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat/Montserrat-VariableFont_wght.ttf') format("ttf");
+}
+
+body, html {
+    background-color: #faf6e9;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
