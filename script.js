@@ -3,18 +3,22 @@
 function constructNavigationBar() {
     const navigationBar = document.getElementById("navigationBar");
     const navigationItems = [
-        {text: "Courses", link: "index.html", dropdown: [
-            {text: "Individual Lessons", link: "index.html"},
-            {text: "Group Lessons", link: "index.html"},
-            {text: "Online Courses", link: "index.html"}
-        ]},
-        {text: "Shop", link: "shop.html"},
-        {text: "Information", link: "index.html", dropdown: [
-            {text: "About Us", link: "index.html"},
-            {text: "FAQ", link: "index.html"}
-        ]},
-        {text: "Social Media", link: "index.html"},
-        {text: "Contact Us", link: "index.html"}
+        {
+            text: "Courses", link: "index.html", dropdown: [
+                { text: "Individual Lessons", link: "index.html" },
+                { text: "Group Lessons", link: "index.html" },
+                { text: "Online Courses", link: "index.html" }
+            ]
+        },
+        { text: "Shop", link: "shop.html" },
+        {
+            text: "Information", link: "index.html", dropdown: [
+                { text: "About Us", link: "index.html" },
+                { text: "FAQ", link: "index.html" }
+            ]
+        },
+        { text: "Social Media", link: "index.html" },
+        { text: "Contact Us", link: "index.html" }
     ];
 
     //logo image plus link
@@ -26,11 +30,13 @@ function constructNavigationBar() {
     logo.style.height = '45px';
     logo.style.marginRight = '90px';
     logo.style.marginLeft = '20px';
+    logo.className = 'logoLink';
 
     logoLink.appendChild(logo);
 
     const cartLink = document.createElement('a');
-    cartLink.href = 'index.html'; //add cart page!!
+    cartLink.href = 'cart.html';
+    cartLink.className = 'cart-link'
     cartLink.style.marginTop = '7px'; // Adjust the value as needed
     cartLink.style.marginLeft = 'auto'; // Push cartLink to the right
     cartLink.style.marginRight = '50px';
@@ -38,7 +44,6 @@ function constructNavigationBar() {
     cartLogo.src = 'cart.svg';
     cartLogo.alt = 'Cart';
     cartLogo.style.height = '40px';
-    
 
     cartLink.appendChild(cartLogo);
 
@@ -50,19 +55,23 @@ function constructNavigationBar() {
     //creating hamburger menu
     const hamburgerButton = document.createElement('button');
     hamburgerButton.innerHTML = '☰';
-    hamburgerButton.id = 'hamburgerButton';
+    hamburgerButton.className = 'hamburger-button';
     hamburgerButton.style.display = 'none';
-    
-    
+    navContainer.appendChild(hamburgerButton);
+
+
+
+
 
     const navItemsContainer = document.createElement('div');
     navItemsContainer.style.display = 'flex';
     navItemsContainer.style.justifyContent = 'left';
     navItemsContainer.style.flexGrow = '0,5';
+    navItemsContainer.className = '.nav-items-container';
 
     navContainer.appendChild(logoLink);
     navContainer.appendChild(navItemsContainer);
-    
+
 
     for (let item of navigationItems) {
         let cell = document.createElement('div');
@@ -95,7 +104,7 @@ function constructNavigationBar() {
             dropdownContainer.style.padding = '10px';
             dropdownContainer.style.transition = 'background-color 0.3s, border-radius 0.3s';
             dropdownContainer.style.borderRadius = '10px';
-            
+
 
             for (let dropdownItem of item.dropdown) {
                 let dropdownCell = document.createElement('a');
@@ -113,7 +122,7 @@ function constructNavigationBar() {
                         window.location.href = dropdownItem.link;
                     });
                 }
-                
+
                 dropdownContainer.appendChild(dropdownCell);
             }
             cell.appendChild(dropdownContainer);
@@ -128,7 +137,7 @@ function constructNavigationBar() {
                 dropdownContainer.style.display = 'none';
                 cell.style.cursor = 'pointer';
             });
-    
+
         }
 
         cell.addEventListener('mouseover', function () {
@@ -141,54 +150,24 @@ function constructNavigationBar() {
             cell.style.cursor = 'pointer';
             cell.style.borderRadius = '0px';
         });
-       
+
 
         navContainer.appendChild(cell);
     }
 
     navContainer.appendChild(cartLink);
 
-    
+
     navigationBar.appendChild(navContainer);
+
+
+
+
 
 }
 
-constructNavigationBar();       
 
 
-const categoriesData = [
-    {photo: 'picture1.jpg', explanation: 'Russian for Business', link: 'index.html'},
-    {photo: 'picture1.jpg', explanation: 'Russian Idioms in Use', link: 'index.html'},
-    {photo: 'picture1.jpg', explanation: 'Express Course of Russian', link: 'index.html'},
-    {photo: 'picture1.jpg', explanation: 'Group Russian Lessons', link: 'index.html'}
-];
-
-const containerTop = document.getElementById('container-top');
-
-categoriesData.forEach(item => {
-    const container = document.createElement('div');
-    container.className = 'container';
-
-    const imgTop = document.createElement('img');
-    imgTop.id = 'img-top';
-    imgTop.src = item.photo;
-    imgTop.alt = 'Photo';
-    container.appendChild(imgTop);
-
-    const text = document.createElement('div');
-    text.className = 'text';
-    text.textContent = item.explanation;
-    container.appendChild(text);
-
-    const learnMoreButton = document.createElement('button');
-    learnMoreButton.textContent = 'Learn More';
-    learnMoreButton.className = 'learn-more-button';
-    learnMoreButton.addEventListener('click', () => {
-        window.location.href = item.link; // Redirect to the specified link
-    });
-    container.appendChild(learnMoreButton);
-
-    containerTop.appendChild(container);
-});
+constructNavigationBar();
 
 

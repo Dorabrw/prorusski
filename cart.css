@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat/Montserrat-VariableFont_wght.ttf') format("ttf");
+}
+
+body,
+html {
+    background-color: #faf6e9;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.main-cart-container {
+    display: flex;
+}
+
+.cart-title {
+    margin-left: 40px;
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.cart-item-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    flex: 4;
+    background-color: lightcoral;
+}
+
+.checkout-item {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+    border: 1px solid #fffdf6;
+    border-radius: 3px;
+    background: #fffdf6;
+    padding: 10px;
+    width: 700px;
+    margin-left: 30px;
+}
+
+.checkout-photo {
+    width: 300px;
+    height: auto;
+    object-fit: cover; /* Ensures the image retains its aspect ratio */
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    flex: 1;
+}
+
+.checkout-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1; 
+    padding: 10px;
+    /* background-color: blue; */
+
+}
+
+.checkout-title {
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-top: 0%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.checkout-description {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.checkout-price {
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+.remove-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgba(11,132,87,0.5);
+    border-radius: 8px;
+    border: 1px solid;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.main-checkout-container {
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    background-color: lightblue;
+    align-items: center;
+}
+
+.small-checkout-container {
+    flex: 1;
+    background-color: #faf6e9;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.submit-form {
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+}
+
+#name,
+#email {
+    border-radius: 8px;
+    height: 35px;
+    width: 210px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #f5d061;
+    border-radius: 8px;
+    border: 0px;
+    width: 80px;
+    height: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+.total-price {
+    font-weight: bold;
+    color: #333;
+
+}
+
+.checkout-price-container {
+    flex: 1;
+    background-color: lightgrey;
+}

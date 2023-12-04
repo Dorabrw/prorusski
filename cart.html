@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="cart.css">
+    <link rel="stylesheet" type="text/css" href="navigation.css">
+    <title>PRO.Russky</title>
+</head>
+<body>
+    <div class="navigation-bar" id="navigationBar">
+
+    </div>
+    <h2 class="cart-title">
+        Your Orders
+    </h2>
+    <div class="main-cart-container">
+    
+        <div class="cart-item-container" id="itemContainer">
+            
+        </div>
+        <div class="main-checkout-container">
+            <div class="small-checkout-container">
+                <div class="checkout-item-container">
+                    <form action="/submit" method="post" class="submit-form">
+                        <label for="name" class="name">Your Name:<br></label>
+                        <input type="text" id="name" name="name" required>
+                        <br>
+                        <br>
+                        <label for="email" class="email">Your E-mail:<br></label>
+                        <input type="email" id="email" name="email" required>
+                        <br>
+                        <br>
+                        <span id="totalPrice" class="total-price">Total price:</span><br>
+                        <input type="submit" value="Submit" class="submit-button">
+                    </form>
+                    
+                </div>
+                <div class="checkout-price-container">
+                    gggg
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

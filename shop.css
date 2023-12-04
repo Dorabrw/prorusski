@@ -68,6 +68,8 @@ body, html {
     width: 20%;
     background-color: white;
 }
+
+
 .shop-column {
     flex: 7;
     width: 75%;
@@ -157,6 +159,12 @@ body, html {
     text-align: left;
     margin-left: 15px;
 }
+
+.container-for-shop-button {
+    flex-direction: column;
+    display: flex;
+}
+
 .shopButton {
     justify-content: center;
     align-items: center;
@@ -175,3 +183,10 @@ body, html {
 .shopButton:hover {
     color: rgba(245, 208, 97, 0.9);
 }
+
+.add-to-cart-message {
+    font-family: 'Montserrat', sans-serif;
+    font-size: small;
+    margin-top: 10px;
+}
+
