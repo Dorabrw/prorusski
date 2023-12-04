@@ -43,7 +43,6 @@ body, html {
     color:black;
 }
 .redirection-img {
-    /* max-width: 20px; */
     margin: 0 10px; /* Adjust the margin as needed */
     height: 20px;
 }
@@ -58,43 +57,87 @@ body, html {
 
 .just-text {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600; 
-    font-size: 22px;
-    padding: 10px;
+    font-weight: bolder; 
+    font-size: 20px;
+    margin-left: 30px;
+}
+.just-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder; 
 }
 
 .shop-main-page {
     display: flex;
     padding: 20px;
+    margin-top: -20px;
 }
 .filter-column {
-    flex: 2;
-    width: 20%;
-    background-color: white;
+    flex: 1;
+    width: 25%;
+    /* background-color: white; */
     position: relative;
     display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.filter-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 .category-box {
-    background-color: lightskyblue;
     padding: 5px;
     display: flex;
     flex-direction: column;
-}
-.checkBoxContainer {
-    display: flex;
+    border: 4px solid #f5d061;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: #f5d061;
 }
 
-.category {
+.level-box {
+    padding: 5px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: rgba(245, 208, 97, 0.8);
 }
+
+.format-box {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: rgba(245, 208, 97, 0.6);
+}
+
+.checkBoxContainer {
+    display: flex;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.category, .level, .format {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
 .categoriesLabel {
     font-family: 'Montserrat', sans-serif;
-    font-size: small;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 7px;
+    margin-top: 5px;
 }
 
 .shop-column {
-    flex: 7;
+    flex: 5;
     width: 75%;
     /* background-color: lightblue; */
     position: relative;
@@ -126,7 +169,7 @@ body, html {
 
 .shopContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /*was 290*/
     gap: 5px;
 }
 .itemContainer {

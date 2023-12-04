@@ -99,7 +99,25 @@ function setTotalPrice() {
     totalPriceSpan.innerHTML = 'Total price: ' + totalPrice + '$';
 }
 
+function setupSubmit(){
+    const submitButton = document.getElementById('submitButton');
+    submitButton.addEventListener('click', function(){
+        alert("Your order has been successfully placed!");
+        removeAllWorsheetsFromCookiesAndRefreshList(1);
+    });
+}
+
+function removeAllWorsheetsFromCookiesAndRefreshList(days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+
+    document.cookie = `worksheets=${JSON.stringify(null)};expires=${expires.toUTCString()};path=/`;
+
+    setupOrderList();
+    setTotalPrice();
+}
 
 setTotalPrice();
 setupOrderList();
+setupSubmit();
 
