@@ -34,10 +34,10 @@ const dataBase = [
     {
         id: 2,
         worksheetImage: 'picture1.jpg',
-        worksheetTitle: 'Похуй что это',
-        worksheetDescription: 'Похуй, что это, но чуть больше слов',
+        worksheetTitle: 'Genitive Case',
+        worksheetDescription: 'The grammar book of how to use Genitive Case in Russian. Simple explanations and useful examples. More than 20 exercises to check yourself after learning the theory. With answers in the end.',
         worksheetLink: 'index.html',
-        worksheetPrice: 100,
+        worksheetPrice: 30,
         worksheetCurrency: '$',
         worksheetDiscount: null,
         worksheetCategory: {category: Category.GRAMMAR, level: Level.A2, format: Format.PDF}
@@ -45,46 +45,68 @@ const dataBase = [
     {
         id: 3,
         worksheetImage: 'picture1.jpg',
-        worksheetTitle: 'Похуй что это',
-        worksheetDescription: 'Похуй, что это, но чуть больше слов',
+        worksheetTitle: 'Reflexive Verbs',
+        worksheetDescription: 'The big book of most frequently used reflexive verbs in Russian. More than 50 pages covered with the reflexive verbs, their conjugation and examples of how to use them. Exercises included.',
         worksheetLink: 'index.html',
-        worksheetPrice: 100,
+        worksheetPrice: 25,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.VOCABULARY, level: Level.A1, format: Format.JPG}
+        worksheetCategory: {category: Category.GRAMMAR, level: Level.B1, format: Format.PDF}
     },
     {
         id: 4,
         worksheetImage: 'picture1.jpg',
-        worksheetTitle: 'Похуй что это',
-        worksheetDescription: 'Похуй, что это, но чуть больше слов',
+        worksheetTitle: 'Russian Phrasal Verbs',
+        worksheetDescription: 'Full collection of Russian Phrasal Verbs ("Идиомы") from our website with explanations, examples and advice of where and how to use them. You can print them and use as flashcards.',
         worksheetLink: 'index.html',
-        worksheetPrice: 100,
+        worksheetPrice: 12,
+        worksheetCurrency: '$',
+        worksheetDiscount: null,
+        worksheetCategory: {category: Category.VOCABULARY, level: Level.A2, format: Format.JPG}
+    },
+    {
+        id: 5,
+        worksheetImage: 'picture1.jpg',
+        worksheetTitle: '"Spring" Worksheet',
+        worksheetDescription: 'Worksheet "Spring" is a small book with the vocabulary connected to the spring weather and spring activities. Inside you will find several vocabulary materials and self-check exercises with answers.',
+        worksheetLink: 'index.html',
+        worksheetPrice: 8,
+        worksheetCurrency: '$',
+        worksheetDiscount: null,
+        worksheetCategory: {category: Category.VOCABULARY, level: Level.A1, format: Format.PDF}
+    },
+    {
+        id: 6,
+        worksheetImage: 'picture1.jpg',
+        worksheetTitle: 'A Gift from Grandmother',
+        worksheetDescription: '"A Gift from Grandmother" is an adaptation of a story written by famous Russian writer. The story includes explanation of verbs of motion and exercises on grammar and vocabulary.',
+        worksheetLink: 'index.html',
+        worksheetPrice: 23,
         worksheetCurrency: '$',
         worksheetDiscount: null,
         worksheetCategory: {category: Category.STORY, level: Level.A2, format: Format.PDF}
     },
     {
-        id: 5,
+        id: 7,
         worksheetImage: 'picture1.jpg',
-        worksheetTitle: 'Похуй что это',
-        worksheetDescription: 'Похуй, что это, но чуть больше слов',
+        worksheetTitle: 'Prepositional Case',
+        worksheetDescription: 'The grammar book of how to use Prepositive Case in Russian. Simple explanations and useful examples. More than 20 exercises to check yourself after learning the theory. With answers.',
         worksheetLink: 'index.html',
-        worksheetPrice: 100,
+        worksheetPrice: 30,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.STORY, level: Level.B1, format: Format.PDF}
+        worksheetCategory: {category: Category.GRAMMAR, level: Level.A2, format: Format.PDF}
     },
     {
-        id: 6,
+        id: 8,
         worksheetImage: 'picture1.jpg',
-        worksheetTitle: 'Похуй что это',
-        worksheetDescription: 'Похуй, что это, но чуть больше слов',
+        worksheetTitle: 'Verbs of Motion',
+        worksheetDescription: 'Simple explanation of verbs of motion. Pictured tables and flashcards for better understanding of the verbs with and without prefixes. Including cards with exercises.',
         worksheetLink: 'index.html',
-        worksheetPrice: 100,
+        worksheetPrice: 27,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.STORY, level: Level.A1, format: Format.JPG}
+        worksheetCategory: {category: Category.GRAMMAR, level: Level.B1, format: Format.JPG}
     }
 ];
 
