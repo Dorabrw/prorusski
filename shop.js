@@ -258,9 +258,46 @@ function setupLevelsFilters() {
     }
 }
 
+function setupFormatsFilters() {
+    const formatsContainer = document.getElementById('formatsContainer');
+    const formats = [Format.JPG, Format.PDF];
+
+    for (let format of formats) {
+        const formatCheckBoxContainer = document.createElement('div');
+        formatCheckBoxContainer.className = 'checkBoxContainer';
+        
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.name = format;
+        input.value = format;
+        input.id = format;
+        input.className = 'format';
+        formatCheckBoxContainer.appendChild(input);
+
+        input.addEventListener('click', function() {
+            if (input.checked) {
+                selectedFormats.push(format);
+                createShopList(filterWorksheets());
+            } else {
+                removeSelectedFormat(format);
+                createShopList(filterWorksheets());
+            }
+        });
+
+        const label = document.createElement('label');
+        label.innerHTML = format;
+        label.className = 'categoriesLabel';
+
+        formatCheckBoxContainer.appendChild(label);
+        formatsContainer.appendChild(formatCheckBoxContainer);
+    }
+}
+
+
 function setupFilters() {
     setupCategoriesFilters();
     setupLevelsFilters();
+    setupFormatsFilters();
 }
 
 function removeSelectedCategory(category) {
@@ -283,6 +320,16 @@ function removeSelectedLevel(level) {
     selectedLevels.splice(indexToRemove, 1);
 }
 
+function removeSelectedFormat(format) {
+    let indexToRemove = 0;
+    for(let index = 0; index <= selectedFormats.length; index++) {
+        if (selectedFormats[index] === format) {
+            indexToRemove = index;
+        }
+    }
+    selectedFormats.splice(indexToRemove, 1);
+}
+
 function filterWorksheets() {
     let copy = dataBase;
     const categoriesFilteredWorksheets = copy.filter(function(worksheet) {
@@ -299,7 +346,7 @@ function filterWorksheets() {
         return shouldShow;
     });
 
-    const levelsFilteredWorksheet = categoriesFilteredWorksheets.filter(function(worksheet){
+    const levelsFilteredWorksheets = categoriesFilteredWorksheets.filter(function(worksheet){
         if (selectedLevels.length === 0) {
             return true;
         }
@@ -312,7 +359,20 @@ function filterWorksheets() {
         return shouldShow;
     });
 
-    return levelsFilteredWorksheet;
+    const formatsFilteredWorksheets = levelsFilteredWorksheets.filter(function(worksheet) {
+        if (selectedFormats.length === 0) {
+            return true;
+        }
+        let shouldShow = false;
+        for (let format of selectedFormats) {
+            if (worksheet.worksheetCategory.format === format) {
+                shouldShow = true;
+            }
+        }
+        return shouldShow; 
+    });
+
+    return formatsFilteredWorksheets;
 }
 
 
