@@ -4,9 +4,9 @@ function setupOrderList() {
     const mainContainer = document.getElementById('itemContainer');
     mainContainer.innerHTML = "";
     if (shopItems == null || shopItems.length === 0) {
-        const emptyCartTitle = document.createElement('h3');
+        const emptyCartTitle = document.createElement('img');
         emptyCartTitle.className = 'empty-cart-title';
-        emptyCartTitle.innerHTML = 'Your orders will be placed here!';
+        emptyCartTitle.src = 'Frame 7.png';
         mainContainer.appendChild(emptyCartTitle);
     } else {
         for (let shopItem of shopItems) {
