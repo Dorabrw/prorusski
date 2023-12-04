@@ -191,12 +191,16 @@ function setupFilters() {
     const categories = [Category.GRAMMAR, Category.STORY, Category.VOCABULARY];
 
     for (let category of categories) {
+        const categoryCheckBoxContainer = document.createElement('div');
+        categoryCheckBoxContainer.className = 'categoryCheckBoxContainer';
+        
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.name = category;
         input.value = category;
         input.id = category;
-        categoriesContainer.appendChild(input);
+        input.className = 'category';
+        categoryCheckBoxContainer.appendChild(input);
 
         input.addEventListener('click', function() {
             if (input.checked) {
@@ -211,7 +215,9 @@ function setupFilters() {
         const label = document.createElement('label');
         label.innerHTML = category;
         label.className = 'categoriesLabel';
-        categoriesContainer.appendChild(label);
+
+        categoryCheckBoxContainer.appendChild(label);
+        categoriesContainer.appendChild(categoryCheckBoxContainer);
     }
 }
 

@@ -74,7 +74,24 @@ body, html {
     position: relative;
     display: inline-block;
 }
+.category-box {
+    background-color: lightskyblue;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.categoryCheckBoxContainer {
+    display: flex;
+}
 
+.category {
+    display: flex;
+    /* flex-direction: column; */
+}
+.categoriesLabel {
+    font-family: 'Montserrat', sans-serif;
+    font-size: small;
+}
 
 .shop-column {
     flex: 7;
