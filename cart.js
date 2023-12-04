@@ -39,6 +39,7 @@ function setupOrderList() {
             checkoutButton.className = 'remove-button';
             checkoutButton.onclick = function () {
                 removeWorsheetFromCookiesAndRefreshList(shopItem.id, 1);
+                setTotalPrice();
             }
 
             checkoutItemInfo.appendChild(checkoutTitle);
@@ -85,5 +86,20 @@ function removeWorsheetFromCookiesAndRefreshList(id, days) {
     setupOrderList();
 }
 
+function setTotalPrice() {
+    const totalPriceSpan = document.getElementById('totalPrice');
+    const cart = getCookie();
+    let totalPrice = 0;
+    if (cart != null && cart.length > 0) {
+        for (let worksheet of cart) {
+         totalPrice += worksheet.worksheetPrice;   
+        }
+        
+    }
+    totalPriceSpan.innerHTML = 'Total price: ' + totalPrice + '$';
+}
+
+
+setTotalPrice();
 setupOrderList();
 
