@@ -34,3 +34,7 @@ categoriesData.forEach(item => {
 });
 
 
+const shopButton = document.getElementById('visitShop');
+shopButton.onclick = function () {
+    window.location.href = 'shop.html';
+}
