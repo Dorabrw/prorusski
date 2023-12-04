@@ -16,6 +16,8 @@ const Format = Object.freeze({
 });
 
 let selectedCategories = [];
+let selectedLevels = [];
+let selectedFormats = [];
 
 const dataBase = [
     {
@@ -186,13 +188,13 @@ function getCookie() {
     return null;
 }
 
-function setupFilters() {
+function setupCategoriesFilters() {
     const categoriesContainer = document.getElementById('categoriesContainer');
     const categories = [Category.GRAMMAR, Category.STORY, Category.VOCABULARY];
 
     for (let category of categories) {
         const categoryCheckBoxContainer = document.createElement('div');
-        categoryCheckBoxContainer.className = 'categoryCheckBoxContainer';
+        categoryCheckBoxContainer.className = 'checkBoxContainer';
         
         const input = document.createElement('input');
         input.type = 'checkbox';
@@ -221,6 +223,46 @@ function setupFilters() {
     }
 }
 
+function setupLevelsFilters() {
+    const levelsContainer = document.getElementById('levelsContainer');
+    const levels = [Level.A1, Level.A2, Level.B1];
+
+    for (let level of levels) {
+        const levelCheckBoxContainer = document.createElement('div');
+        levelCheckBoxContainer.className = 'checkBoxContainer';
+        
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.name = level;
+        input.value = level;
+        input.id = level;
+        input.className = 'level';
+        levelCheckBoxContainer.appendChild(input);
+
+        input.addEventListener('click', function() {
+            if (input.checked) {
+                selectedLevels.push(level);
+                createShopList(filterWorksheets());
+            } else {
+                removeSelectedLevel(level);
+                createShopList(filterWorksheets());
+            }
+        });
+
+        const label = document.createElement('label');
+        label.innerHTML = level;
+        label.className = 'categoriesLabel';
+
+        levelCheckBoxContainer.appendChild(label);
+        levelsContainer.appendChild(levelCheckBoxContainer);
+    }
+}
+
+function setupFilters() {
+    setupCategoriesFilters();
+    setupLevelsFilters();
+}
+
 function removeSelectedCategory(category) {
     let indexToRemove = 0;
     for(let index = 0; index <= selectedCategories.length; index++) {
@@ -231,9 +273,19 @@ function removeSelectedCategory(category) {
     selectedCategories.splice(indexToRemove, 1);
 }
 
+function removeSelectedLevel(level) {
+    let indexToRemove = 0;
+    for(let index = 0; index <= selectedLevels.length; index++) {
+        if (selectedLevels[index] === level) {
+            indexToRemove = index;
+        }
+    }
+    selectedLevels.splice(indexToRemove, 1);
+}
+
 function filterWorksheets() {
     let copy = dataBase;
-    const filteredWorksheets = copy.filter(function(worksheet) {
+    const categoriesFilteredWorksheets = copy.filter(function(worksheet) {
         if (selectedCategories.length === 0) {
             return true;
         }
@@ -247,7 +299,20 @@ function filterWorksheets() {
         return shouldShow;
     });
 
-    return filteredWorksheets;
+    const levelsFilteredWorksheet = categoriesFilteredWorksheets.filter(function(worksheet){
+        if (selectedLevels.length === 0) {
+            return true;
+        }
+        let shouldShow = false;
+        for (let level of selectedLevels) {
+            if (worksheet.worksheetCategory.level === level) {
+                shouldShow = true;
+            }
+        }
+        return shouldShow;
+    });
+
+    return levelsFilteredWorksheet;
 }
 
 
