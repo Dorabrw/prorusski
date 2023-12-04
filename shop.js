@@ -1,3 +1,5 @@
+
+
 const Category = Object.freeze({
     VOCABULARY: 'vocabulary',
     GRAMMAR: 'grammar',
@@ -157,6 +159,7 @@ function createShopList(worksheets) {
                 messageElement.className = 'add-to-cart-message';
                 messageElement.innerHTML = 'Your item is added to cart!';
                 containerForShopButton.appendChild(messageElement);
+                updateCartIcon();
             }
         }
 
@@ -396,6 +399,8 @@ function filterWorksheets() {
 
     return formatsFilteredWorksheets;
 }
+
+
 
 
 createShopList(dataBase);

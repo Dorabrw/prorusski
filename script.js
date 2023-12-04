@@ -41,7 +41,8 @@ function constructNavigationBar() {
     cartLink.style.marginLeft = 'auto'; // Push cartLink to the right
     cartLink.style.marginRight = '50px';
     const cartLogo = document.createElement('img');
-    cartLogo.src = 'cart.svg';
+    cartLogo.id = 'cartLogo';
+    cartLogo.src = isCartEmpty() ? 'cart.svg' : 'cart-red.svg';
     cartLogo.alt = 'Cart';
     cartLogo.style.height = '40px';
 
@@ -58,10 +59,6 @@ function constructNavigationBar() {
     hamburgerButton.className = 'hamburger-button';
     hamburgerButton.style.display = 'none';
     navContainer.appendChild(hamburgerButton);
-
-
-
-
 
     const navItemsContainer = document.createElement('div');
     navItemsContainer.style.display = 'flex';
@@ -160,10 +157,28 @@ function constructNavigationBar() {
 
     navigationBar.appendChild(navContainer);
 
+}
 
+function isCartEmpty() {
+    const cookieName = `worksheets=`;
+    const cookies = document.cookie.split(';');
 
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.indexOf(cookieName) === 0) {
+            const cart = JSON.parse(cookie.substring(cookieName.length, cookie.length));
+            if (cart.length > 0) {
+                return false;
+            }
+        }
+    }
 
+    return true;
+}
 
+function updateCartIcon() {
+    const cartIcon = document.getElementById('cartLogo');
+    cartIcon.src = isCartEmpty() ? 'cart.svg' : 'cart-red.svg';
 }
 
 

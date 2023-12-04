@@ -40,6 +40,7 @@ function setupOrderList() {
             checkoutButton.onclick = function () {
                 removeWorsheetFromCookiesAndRefreshList(shopItem.id, 1);
                 setTotalPrice();
+                updateCartIcon();
             }
 
             checkoutItemInfo.appendChild(checkoutTitle);
