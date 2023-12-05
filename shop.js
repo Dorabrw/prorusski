@@ -24,7 +24,7 @@ let selectedFormats = [];
 const dataBase = [
     {
         id: 1,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 10.png',
         worksheetTitle: '"Autumn" Worksheet',
         worksheetDescription: 'Worksheet "Autumn" is a small book with the vocabulary connected to the autumn weather and autumn activities. Inside you will find several vocabulary materials and self-check exercises with answers.',
         worksheetLink: 'item1.html',
@@ -35,7 +35,7 @@ const dataBase = [
     },
     {
         id: 2,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 13.png',
         worksheetTitle: 'Genitive Case',
         worksheetDescription: 'The grammar book of how to use Genitive Case in Russian. Simple explanations and useful examples. More than 20 exercises to check yourself after learning the theory. With answers in the end.',
         worksheetLink: 'index.html',
@@ -46,7 +46,7 @@ const dataBase = [
     },
     {
         id: 3,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 15.png',
         worksheetTitle: 'Reflexive Verbs',
         worksheetDescription: 'The big book of most frequently used reflexive verbs in Russian. More than 50 pages covered with the reflexive verbs, their conjugation and examples of how to use them. Exercises included.',
         worksheetLink: 'index.html',
@@ -57,7 +57,7 @@ const dataBase = [
     },
     {
         id: 4,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 8.png',
         worksheetTitle: 'Russian Phrasal Verbs',
         worksheetDescription: 'Full collection of Russian Phrasal Verbs ("Идиомы") from our website with explanations, examples and advice of where and how to use them. You can print them and use as flashcards.',
         worksheetLink: 'index.html',
@@ -68,7 +68,7 @@ const dataBase = [
     },
     {
         id: 5,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 17.png',
         worksheetTitle: '"Spring" Worksheet',
         worksheetDescription: 'Worksheet "Spring" is a small book with the vocabulary connected to the spring weather and spring activities. Inside you will find several vocabulary materials and self-check exercises with answers.',
         worksheetLink: 'index.html',
@@ -79,7 +79,7 @@ const dataBase = [
     },
     {
         id: 6,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 9.png',
         worksheetTitle: 'A Gift from Grandmother',
         worksheetDescription: '"A Gift from Grandmother" is an adaptation of a story written by famous Russian writer. The story includes explanation of verbs of motion and exercises on grammar and vocabulary.',
         worksheetLink: 'index.html',
@@ -90,7 +90,7 @@ const dataBase = [
     },
     {
         id: 7,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 12.png',
         worksheetTitle: 'Prepositional Case',
         worksheetDescription: 'The grammar book of how to use Prepositive Case in Russian. Simple explanations and useful examples. More than 20 exercises to check yourself after learning the theory. With answers.',
         worksheetLink: 'index.html',
@@ -101,7 +101,7 @@ const dataBase = [
     },
     {
         id: 8,
-        worksheetImage: 'picture1.jpg',
+        worksheetImage: 'Frame 11.png',
         worksheetTitle: 'Verbs of Motion',
         worksheetDescription: 'Simple explanation of verbs of motion. Pictured tables and flashcards for better understanding of the verbs with and without prefixes. Including cards with exercises.',
         worksheetLink: 'index.html',
