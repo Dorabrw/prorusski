@@ -6,7 +6,7 @@ function setupOrderList() {
     if (shopItems == null || shopItems.length === 0) {
         const emptyCartTitle = document.createElement('img');
         emptyCartTitle.className = 'empty-cart-title';
-        emptyCartTitle.src = 'Frame 7.png';
+        emptyCartTitle.src = 'assets/Frame 7.png';
         mainContainer.appendChild(emptyCartTitle);
     } else {
         for (let shopItem of shopItems) {

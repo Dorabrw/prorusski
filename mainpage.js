@@ -1,8 +1,8 @@
 const categoriesData = [
-    {photo: 'picture1.jpg', explanation: 'Russian for Business', link: 'index.html'},
-    {photo: 'picture1.jpg', explanation: 'Russian Idioms in Use', link: 'index.html'},
-    {photo: 'picture1.jpg', explanation: 'Express Course of Russian', link: 'index.html'},
-    {photo: 'picture1.jpg', explanation: 'Group Russian Lessons', link: 'index.html'}
+    {photo: 'assets/picture1.jpg', explanation: 'Russian for Business', link: 'index.html'},
+    {photo: 'assets/picture1.jpg', explanation: 'Russian Idioms in Use', link: 'index.html'},
+    {photo: 'assets/picture1.jpg', explanation: 'Express Course of Russian', link: 'index.html'},
+    {photo: 'assets/picture1.jpg', explanation: 'Group Russian Lessons', link: 'index.html'}
 ];
 
 const containerTop = document.getElementById('container-top');

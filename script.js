@@ -1,5 +1,3 @@
-
-
 function constructNavigationBar() {
     const navigationBar = document.getElementById("navigationBar");
     const navigationItems = [
@@ -25,7 +23,7 @@ function constructNavigationBar() {
     const logoLink = document.createElement('a');
     logoLink.href = 'index.html';
     const logo = document.createElement('img');
-    logo.src = 'Frame.png';
+    logo.src = 'assets/Frame.png';
     logo.alt = 'Logo';
     logo.style.height = '45px';
     logo.style.marginRight = '90px';
@@ -42,7 +40,7 @@ function constructNavigationBar() {
     cartLink.style.marginRight = '50px';
     const cartLogo = document.createElement('img');
     cartLogo.id = 'cartLogo';
-    cartLogo.src = isCartEmpty() ? 'cart.svg' : 'cart-red.svg';
+    cartLogo.src = isCartEmpty() ? 'assets/cart.svg' : 'assets/cart-red.svg';
     cartLogo.alt = 'Cart';
     cartLogo.style.height = '40px';
 
@@ -178,10 +176,8 @@ function isCartEmpty() {
 
 function updateCartIcon() {
     const cartIcon = document.getElementById('cartLogo');
-    cartIcon.src = isCartEmpty() ? 'cart.svg' : 'cart-red.svg';
+    cartIcon.src = isCartEmpty() ? 'assets/cart.svg' : 'assets/cart-red.svg';
 }
-
-
 
 constructNavigationBar();
 
