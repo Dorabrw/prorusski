@@ -165,7 +165,7 @@ function isCartEmpty() {
         let cookie = cookies[i].trim();
         if (cookie.indexOf(cookieName) === 0) {
             const cart = JSON.parse(cookie.substring(cookieName.length, cookie.length));
-            if (cart.length > 0) {
+            if (cart != null && cart.length > 0) {
                 return false;
             }
         }
