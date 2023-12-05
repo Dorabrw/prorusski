@@ -155,7 +155,6 @@ function createShopList(worksheets) {
         shopButton.innerHTML = 'Add to Cart';
         shopButton.onclick = function () {
             const isSuccessful = setCookie(worksheet, 1);
-            console.log(isSuccessful);
             if (isSuccessful) {
                 let messageElement = document.createElement('div');
                 messageElement.className = 'add-to-cart-message';
