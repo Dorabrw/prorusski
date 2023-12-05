@@ -124,6 +124,7 @@ html {
     flex-direction: row;
     /* background-color: lightblue; */
     align-items: center;
+    position: relative;
 }
 
 .small-checkout-container {
@@ -133,6 +134,9 @@ html {
     justify-content: center;
     padding: 10px;
     margin-left: 70px;
+    /* position: fixed;
+    top: 360px; */
+    
 }
 
 .submit-form {

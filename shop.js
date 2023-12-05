@@ -1,9 +1,9 @@
 
 
 const Category = Object.freeze({
-    VOCABULARY: 'vocabulary',
-    GRAMMAR: 'grammar',
-    STORY: 'story',
+    VOCABULARY: 'Vocabulary',
+    GRAMMAR: 'Grammar',
+    STORY: 'Story',
 });
 
 const Level = Object.freeze({
@@ -31,7 +31,7 @@ const dataBase = [
         worksheetPrice: 8,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.VOCABULARY, level: Level.A1, format: Format.PDF}
+        worksheetCategory: { category: Category.VOCABULARY, level: Level.A1, format: Format.PDF }
     },
     {
         id: 2,
@@ -42,7 +42,7 @@ const dataBase = [
         worksheetPrice: 30,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.GRAMMAR, level: Level.A2, format: Format.PDF}
+        worksheetCategory: { category: Category.GRAMMAR, level: Level.A2, format: Format.PDF }
     },
     {
         id: 3,
@@ -53,7 +53,7 @@ const dataBase = [
         worksheetPrice: 25,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.GRAMMAR, level: Level.B1, format: Format.PDF}
+        worksheetCategory: { category: Category.GRAMMAR, level: Level.B1, format: Format.PDF }
     },
     {
         id: 4,
@@ -64,7 +64,7 @@ const dataBase = [
         worksheetPrice: 12,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.VOCABULARY, level: Level.A2, format: Format.JPG}
+        worksheetCategory: { category: Category.VOCABULARY, level: Level.A2, format: Format.JPG }
     },
     {
         id: 5,
@@ -75,7 +75,7 @@ const dataBase = [
         worksheetPrice: 8,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.VOCABULARY, level: Level.A1, format: Format.PDF}
+        worksheetCategory: { category: Category.VOCABULARY, level: Level.A1, format: Format.PDF }
     },
     {
         id: 6,
@@ -86,7 +86,7 @@ const dataBase = [
         worksheetPrice: 23,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.STORY, level: Level.A2, format: Format.PDF}
+        worksheetCategory: { category: Category.STORY, level: Level.A2, format: Format.PDF }
     },
     {
         id: 7,
@@ -97,7 +97,7 @@ const dataBase = [
         worksheetPrice: 30,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.GRAMMAR, level: Level.A2, format: Format.PDF}
+        worksheetCategory: { category: Category.GRAMMAR, level: Level.A2, format: Format.PDF }
     },
     {
         id: 8,
@@ -108,9 +108,11 @@ const dataBase = [
         worksheetPrice: 27,
         worksheetCurrency: '$',
         worksheetDiscount: null,
-        worksheetCategory: {category: Category.GRAMMAR, level: Level.B1, format: Format.JPG}
+        worksheetCategory: { category: Category.GRAMMAR, level: Level.B1, format: Format.JPG }
     }
 ];
+
+let searchInputValue = '';
 
 function createShopList(worksheets) {
     const shopContainer = document.getElementById('mainShopContainer');
@@ -220,7 +222,7 @@ function setupCategoriesFilters() {
     for (let category of categories) {
         const categoryCheckBoxContainer = document.createElement('div');
         categoryCheckBoxContainer.className = 'checkBoxContainer';
-        
+
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.name = category;
@@ -229,7 +231,7 @@ function setupCategoriesFilters() {
         input.className = 'category';
         categoryCheckBoxContainer.appendChild(input);
 
-        input.addEventListener('click', function() {
+        input.addEventListener('click', function () {
             if (input.checked) {
                 selectedCategories.push(category);
                 createShopList(filterWorksheets());
@@ -255,7 +257,7 @@ function setupLevelsFilters() {
     for (let level of levels) {
         const levelCheckBoxContainer = document.createElement('div');
         levelCheckBoxContainer.className = 'checkBoxContainer';
-        
+
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.name = level;
@@ -264,7 +266,7 @@ function setupLevelsFilters() {
         input.className = 'level';
         levelCheckBoxContainer.appendChild(input);
 
-        input.addEventListener('click', function() {
+        input.addEventListener('click', function () {
             if (input.checked) {
                 selectedLevels.push(level);
                 createShopList(filterWorksheets());
@@ -290,7 +292,7 @@ function setupFormatsFilters() {
     for (let format of formats) {
         const formatCheckBoxContainer = document.createElement('div');
         formatCheckBoxContainer.className = 'checkBoxContainer';
-        
+
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.name = format;
@@ -299,7 +301,7 @@ function setupFormatsFilters() {
         input.className = 'format';
         formatCheckBoxContainer.appendChild(input);
 
-        input.addEventListener('click', function() {
+        input.addEventListener('click', function () {
             if (input.checked) {
                 selectedFormats.push(format);
                 createShopList(filterWorksheets());
@@ -327,7 +329,7 @@ function setupFilters() {
 
 function removeSelectedCategory(category) {
     let indexToRemove = 0;
-    for(let index = 0; index <= selectedCategories.length; index++) {
+    for (let index = 0; index <= selectedCategories.length; index++) {
         if (selectedCategories[index] === category) {
             indexToRemove = index;
         }
@@ -337,7 +339,7 @@ function removeSelectedCategory(category) {
 
 function removeSelectedLevel(level) {
     let indexToRemove = 0;
-    for(let index = 0; index <= selectedLevels.length; index++) {
+    for (let index = 0; index <= selectedLevels.length; index++) {
         if (selectedLevels[index] === level) {
             indexToRemove = index;
         }
@@ -347,7 +349,7 @@ function removeSelectedLevel(level) {
 
 function removeSelectedFormat(format) {
     let indexToRemove = 0;
-    for(let index = 0; index <= selectedFormats.length; index++) {
+    for (let index = 0; index <= selectedFormats.length; index++) {
         if (selectedFormats[index] === format) {
             indexToRemove = index;
         }
@@ -357,7 +359,7 @@ function removeSelectedFormat(format) {
 
 function filterWorksheets() {
     let copy = dataBase;
-    const categoriesFilteredWorksheets = copy.filter(function(worksheet) {
+    const categoriesFilteredWorksheets = copy.filter(function (worksheet) {
         if (selectedCategories.length === 0) {
             return true;
         }
@@ -366,12 +368,12 @@ function filterWorksheets() {
         for (let category of selectedCategories) {
             if (worksheet.worksheetCategory.category === category) {
                 shouldShow = true;
-            } 
+            }
         }
         return shouldShow;
     });
 
-    const levelsFilteredWorksheets = categoriesFilteredWorksheets.filter(function(worksheet){
+    const levelsFilteredWorksheets = categoriesFilteredWorksheets.filter(function (worksheet) {
         if (selectedLevels.length === 0) {
             return true;
         }
@@ -384,7 +386,7 @@ function filterWorksheets() {
         return shouldShow;
     });
 
-    const formatsFilteredWorksheets = levelsFilteredWorksheets.filter(function(worksheet) {
+    const formatsFilteredWorksheets = levelsFilteredWorksheets.filter(function (worksheet) {
         if (selectedFormats.length === 0) {
             return true;
         }
@@ -394,14 +396,30 @@ function filterWorksheets() {
                 shouldShow = true;
             }
         }
-        return shouldShow; 
+        return shouldShow;
     });
 
-    return formatsFilteredWorksheets;
+    const searchFilteresWorksheets = formatsFilteredWorksheets.filter(function (worksheet) {
+        if (searchInputValue === '') {
+            return true;
+        }
+        return worksheet.worksheetTitle.toLowerCase().includes(searchInputValue.toLowerCase());
+    })
+
+    return searchFilteresWorksheets;
 }
 
+function setupSearchBar() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function () {
+        console.log(searchInput.value);
+        searchInputValue = searchInput.value;
+        createShopList(filterWorksheets());
+    });
+}
 
-
-
+setupSearchBar();
 createShopList(dataBase);
 setupFilters();
+
+
